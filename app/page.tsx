@@ -1,7 +1,9 @@
+import Hero from './components/Hero'
+
 export default function Home() {
   return (
-    <main className="flex h-[2000px] min-h-screen flex-col items-center justify-between p-24">
-      Portfolio
+    <main className="px-52 py-16">
+      <Hero />
     </main>
   )
 }
