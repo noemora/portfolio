@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
+import { Providers } from './Providers'
 import Navbar from './components/Navbar'
 import './globals.css'
 
@@ -18,9 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-zinc-900 text-zinc-100 `}>
-        <Navbar />
-        {children}
+      <body
+        className={`${inter.className} bg-blue-darker container mx-auto h-lvh w-full text-light-gray`}
+      >
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   )
