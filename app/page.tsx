@@ -1,9 +1,11 @@
+import About from './components/About'
 import Hero from './components/Hero'
 
 export default function Home() {
   return (
-    <main className="px-52 py-16">
+    <div className="flex flex-col justify-center gap-8">
       <Hero />
-    </main>
+      <About />
+    </div>
   )
 }

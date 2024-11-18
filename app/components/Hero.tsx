@@ -1,7 +1,9 @@
 'use client'
 
 import { Button } from '@nextui-org/react'
+import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
+import AvatarImage from './AvatarImage'
 import DownloadIcon from './DownloadIcon'
 import GithubIcon from './GithubIcon'
 import LinkedinIcon from './LinkedinIcon'
@@ -9,51 +11,91 @@ import RightArrowIcon from './RightArrowIcon'
 
 export default function Hero() {
   return (
-    <>
-      <div className="flex flex-col gap-y-8">
-        <div className="flex h-24 flex-col gap-2">
-          <h1 className="text-6xl font-bold leading-none">Noé Mora</h1>
-          <TypeAnimation
-            sequence={[
-              '',
-              0,
-              'I worked as a Software Engineer',
-              2000,
-              'I worked as a Frontend Developer',
-              2000,
-              'I worked as a Full Stack Developer',
-              2000,
-            ]}
-            repeat={Infinity}
-            cursor
-            preRenderFirstString
-            className="text-2xl"
-          />
-        </div>
-        <div className="flex gap-6">
-          <Button
-            color="primary"
-            radius="full"
-            endContent={<RightArrowIcon className="h-6 w-6" />}
-            className="bg-[#0077B5] text-medium font-medium"
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0.25, 0.8, 0.25, 1],
+      }}
+      className="flex flex-col gap-16"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.8 }}
+        className="flex flex-col items-center justify-between gap-12 md:flex-row"
+      >
+        <div className="flex flex-col gap-8 md:w-2/3">
+          <div className="flex flex-col gap-4">
+            <h1 className="text-5xl font-extrabold leading-tight md:text-6xl">
+              Noé Mora
+            </h1>
+            <TypeAnimation
+              sequence={[
+                '',
+                1800,
+                'Software Engineer 🚀',
+                3800,
+                'Frontend Developer 💻',
+                5800,
+                'Full Stack Developer 🌐',
+                7800,
+              ]}
+              repeat={Infinity}
+              cursor
+              preRenderFirstString
+              className="text-xl md:text-2xl"
+            />
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.8 }}
+            className="flex flex-wrap gap-4"
           >
-            Contact me here
-          </Button>
-          <Button
-            radius="full"
-            className="gap-1 text-medium font-semibold"
-            endContent={<DownloadIcon className="h-7 w-7" />}
-          >
-            Download my resume
-          </Button>
-          <Button isIconOnly radius="full">
-            <GithubIcon />
-          </Button>
-          <Button isIconOnly radius="full" className="border-none bg-[#0077B5]">
-            <LinkedinIcon />
-          </Button>
+            <Button
+              color="primary"
+              radius="full"
+              endContent={<RightArrowIcon className="h-6 w-6" />}
+              className="bg-blue-light text-medium"
+            >
+              Contact Me
+            </Button>
+            <Button
+              radius="full"
+              className="gap-2 text-medium font-semibold "
+              endContent={<DownloadIcon className="h-5 w-5" />}
+            >
+              Download Resume
+            </Button>
+            <Button
+              isIconOnly
+              radius="full"
+              className="hover:bg-gray-100"
+              aria-label="GitHub Profile"
+            >
+              <GithubIcon />
+            </Button>
+            <Button
+              isIconOnly
+              radius="full"
+              className="bg-blue-light text-white"
+              aria-label="LinkedIn Profile"
+            >
+              <LinkedinIcon />
+            </Button>
+          </motion.div>
         </div>
-      </div>
-    </>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.8 }}
+        >
+          <AvatarImage />
+        </motion.div>
+      </motion.div>
+    </motion.div>
   )
 }
