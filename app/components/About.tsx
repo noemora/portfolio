@@ -1,11 +1,12 @@
 'use client'
 
+import { Button } from '@nextui-org/react'
 import { motion } from 'framer-motion'
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center gap-8 md:flex-row">
-      <div className="my-8 flex flex-col gap-8">
+    <div className="flex flex-col items-center gap-8 py-8 md:flex-row">
+      <div className="flex flex-col gap-8">
         <motion.h1
           className="text-4xl font-bold"
           initial={{ opacity: 0, y: -50 }}
@@ -43,6 +44,9 @@ export default function About() {
             explore innovative tools to deliver exceptional results.
           </motion.p>
         </div>
+        <Button color="primary" size="lg" className="mt-8">
+          More About Me
+        </Button>
       </div>
     </div>
   )
