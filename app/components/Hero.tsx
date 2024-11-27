@@ -6,6 +6,7 @@ import { TypeAnimation } from 'react-type-animation'
 import AvatarImage from './AvatarImage'
 import DownloadIcon from './DownloadIcon'
 import GithubIcon from './GithubIcon'
+import IconButton from './IconButton'
 import LinkedinIcon from './LinkedinIcon'
 import RightArrowIcon from './RightArrowIcon'
 
@@ -65,27 +66,17 @@ export default function Hero() {
             </Button>
             <Button
               radius="full"
-              className="gap-2 text-medium font-semibold "
               endContent={<DownloadIcon className="h-5 w-5" />}
+              className="gap-2 text-medium font-semibold"
             >
               Download Resume
             </Button>
-            <Button
-              isIconOnly
-              radius="full"
-              className="hover:bg-gray-100"
-              aria-label="GitHub Profile"
-            >
+            <IconButton ariaLabel="GitHub Profile">
               <GithubIcon />
-            </Button>
-            <Button
-              isIconOnly
-              radius="full"
-              className="bg-blue-light text-white"
-              aria-label="LinkedIn Profile"
-            >
+            </IconButton>
+            <IconButton ariaLabel="LinkedIn Profile" className="bg-blue-light">
               <LinkedinIcon />
-            </Button>
+            </IconButton>
           </motion.div>
         </div>
         <motion.div
