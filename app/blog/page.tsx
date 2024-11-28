@@ -1,3 +1,9 @@
+import Sections from '../components/Sections'
+
 export default function Blog() {
-  return <div>Blog</div>
+  return (
+    <div>
+      <Sections />
+    </div>
+  )
 }

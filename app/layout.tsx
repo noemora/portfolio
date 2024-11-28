@@ -26,7 +26,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <main className="h-full pb-32 pt-12 lg:px-52 xl:px-72">
+          <main className="h-full px-8 py-8 md:px-20 lg:px-40 lg:py-12 xl:px-60">
             {children}
           </main>
           <Footer />

@@ -14,21 +14,18 @@ export const pages = [
   {
     name: 'Projects',
     href: '/projects',
-    // component: 'Projects',
     image: '/projects.jpg',
     altText: 'Projects background',
   },
   {
     name: 'Contact',
     href: '/contact',
-    // component: 'Contact',
     image: '/contact.jpg',
     altText: 'Contact background',
   },
   {
     name: 'Blog',
     href: '/blog',
-    // component: 'Blog',
     image: '/blog.jpg',
     altText: 'Blog background',
   },

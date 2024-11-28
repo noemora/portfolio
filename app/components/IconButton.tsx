@@ -1,4 +1,5 @@
 import { Button } from '@nextui-org/react'
+import clsx from 'clsx'
 import React from 'react'
 
 interface IconButtonProps {
@@ -17,7 +18,7 @@ export default function IconButton({
       isIconOnly
       radius="full"
       aria-label={ariaLabel}
-      className={className}
+      className={clsx(className, 'hover:scale-110')}
     >
       {children}
     </Button>

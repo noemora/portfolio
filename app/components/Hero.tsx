@@ -28,8 +28,8 @@ export default function Hero() {
         transition={{ duration: 1.8 }}
         className="flex flex-col items-center justify-between gap-12 md:flex-row"
       >
-        <div className="flex flex-col gap-8 md:w-2/3">
-          <div className="flex flex-col gap-4">
+        <div className="order-2 flex flex-col gap-8 md:order-none md:w-2/3">
+          <div className="flex flex-col items-center gap-4 md:items-start">
             <h1 className="text-5xl font-extrabold leading-tight md:text-6xl">
               Noé Mora
             </h1>
@@ -54,35 +54,41 @@ export default function Hero() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.8 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap items-center justify-center gap-4 md:justify-normal"
           >
+            <Button
+              radius="full"
+              endContent={<DownloadIcon className="h-5 w-5" />}
+              className="gap-2 text-medium font-semibold hover:scale-105"
+            >
+              Download Resume
+            </Button>
             <Button
               color="primary"
               radius="full"
               endContent={<RightArrowIcon className="h-6 w-6" />}
-              className="bg-blue-light text-medium"
+              className="bg-blue-light text-medium hover:scale-105"
             >
               Contact Me
             </Button>
-            <Button
-              radius="full"
-              endContent={<DownloadIcon className="h-5 w-5" />}
-              className="gap-2 text-medium font-semibold"
-            >
-              Download Resume
-            </Button>
-            <IconButton ariaLabel="GitHub Profile">
-              <GithubIcon />
-            </IconButton>
-            <IconButton ariaLabel="LinkedIn Profile" className="bg-blue-light">
-              <LinkedinIcon />
-            </IconButton>
+            <div className="flex gap-4">
+              <IconButton ariaLabel="GitHub Profile">
+                <GithubIcon />
+              </IconButton>
+              <IconButton
+                ariaLabel="LinkedIn Profile"
+                className="bg-blue-light"
+              >
+                <LinkedinIcon />
+              </IconButton>
+            </div>
           </motion.div>
         </div>
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.8 }}
+          className="order-1 flex items-center justify-center md:order-none"
         >
           <AvatarImage />
         </motion.div>
