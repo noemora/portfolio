@@ -9,7 +9,7 @@ export default function Sections() {
   const pathname = usePathname()
   const router = useRouter()
   return (
-    <div className="grid grid-cols-1 gap-6 py-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+    <div className="grid grid-cols-1 gap-6 pb-10 pt-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
       {pages
         .filter(page => page.href !== pathname)
         .map(({ name, image, href, altText }, index) => (
@@ -24,7 +24,7 @@ export default function Sections() {
               isFooterBlurred
               isPressable
               radius="lg"
-              className="h-28 w-full cursor-pointer border-none hover:scale-105"
+              className="group h-28 w-full cursor-pointer border-none hover:scale-105"
               onPress={() => router.push(href)}
             >
               <Image
@@ -34,7 +34,11 @@ export default function Sections() {
                 height={500}
                 className="h-full w-full object-cover"
               />
-              <CardFooter className="absolute bottom-1 z-10 ml-8 w-[calc(100%_-_60px)] justify-center overflow-hidden rounded-large py-1 shadow-small before:rounded-xl">
+              <CardFooter
+                className="absolute -bottom-7 z-10 ml-8 w-[calc(100%_-_60px)]
+              justify-center overflow-hidden rounded-large py-1 shadow-small
+              transition group-hover:-translate-y-10 group-hover:delay-150 group-hover:ease-in-out"
+              >
                 <h3 className="text-sm font-bold">{name}</h3>
               </CardFooter>
             </Card>

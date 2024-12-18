@@ -10,17 +10,12 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '1280px',
-      xl: '1600px',
+      sm: '360px',
+      md: '640px',
+      lg: '1024px',
+      xl: '1537px',
     },
-
     extend: {
-      fontSize: {
-        // 'clamp-md': 'clamp(1rem, 2vw, 2rem)',
-        // 'clamp-xl': 'clamp(3rem, 5vw, 4rem)',
-      },
       colors: {
         'light-gray': '#E0E1DD',
         'blue-opaque': '#778DA9',
