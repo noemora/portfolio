@@ -1,4 +1,3 @@
-import logoIcon from '@/public/logo-nm.png'
 import {
   Card,
   CardBody,
@@ -7,32 +6,63 @@ import {
   Divider,
   Link,
 } from '@nextui-org/react'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
-export default function CardExample() {
+interface CardExampleProps {
+  header?: {
+    logo: string | StaticImageData
+    alt: string
+    title: string
+    subtitle: string
+  }
+  body: string
+  footer?: {
+    link: string
+    text: string
+  }
+}
+
+export default function CardExample({
+  header,
+  body,
+  footer,
+}: CardExampleProps) {
   return (
     <Card className="col-span-2 max-w-[400px]">
-      <CardHeader className="flex gap-3">
-        <Image src={logoIcon} width={40} height={40} alt="logoNM" />
-        <div className="flex flex-col">
-          <p className="text-md">NextUI</p>
-          <p className="text-small text-default-500">nextui.org</p>
-        </div>
-      </CardHeader>
-      <Divider />
+      {header && (
+        <>
+          <CardHeader className="flex gap-3">
+            <Image
+              src={header?.logo}
+              width={40}
+              height={40}
+              alt={header?.alt || 'Logo'}
+            />
+            <div className="flex flex-col">
+              <p className="text-md">{header?.title}</p>
+              <p className="text-small text-default-500">{header?.title}</p>
+            </div>
+          </CardHeader>
+          <Divider />
+        </>
+      )}
       <CardBody>
-        <p>Make beautiful websites regardless of your design experience.</p>
+        <p>{body}</p>
       </CardBody>
-      <Divider />
-      <CardFooter>
-        <Link
-          isExternal
-          showAnchorIcon
-          href="https://github.com/nextui-org/nextui"
-        >
-          Visit source code on GitHub.
-        </Link>
-      </CardFooter>
+      {footer && (
+        <>
+          <Divider />
+          <CardFooter>
+            <Link
+              isExternal
+              showAnchorIcon
+              href="https://github.com/nextui-org/nextui"
+            >
+              Visit source code on GitHub.
+            </Link>
+          </CardFooter>
+        </>
+      )}
     </Card>
   )
 }
