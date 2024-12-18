@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} h-full min-h-screen w-full bg-blue-darker text-light-gray`}
+        className={`${inter.className} h-full min-h-screen w-full min-w-[350px] bg-blue-darker text-light-gray`}
       >
         <Providers>
           <Header />
